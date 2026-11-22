@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Nihongo Study - Belajar bahasa Jepang dengan mudah, menyenangkan, dan terarah.">
+
+    <title>Nihongo Study - Belajar Bahasa Jepang</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<!-- HEADER -->
+<header class="header" id="beranda">
+
+    <!-- TOMBOL HAMBURGER -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-controls="navigasi-utama"
+        aria-expanded="false"
+        onclick="toggleNavigasiUtama()">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <!-- LOGO -->
+    <div class="logo">
+        <div class="logo-icon">⛩️</div>
+        <div class="logo-text">
+            <h1>Nihongo Study</h1>
+            <p>日本語を学ぼう</p>
+        </div>
+    </div>
+
+   <!-- NAVIGASI -->
+<nav id="navigasi-utama"
+     aria-label="Menu navigasi"
+     onclick="tutupNavigasiUtama()">
+
+    <a href="index.html">
+        ⌂ Beranda
+    </a>
+
+    <a href="hiragana-katakana.html">
+        あ Hiragana & Katakana
+    </a>
+
+    <a href="kanji.html">
+        漢 Kanji
+    </a>
+
+    <a href="flashcard.html">
+        🗂️ Flashcard
+    </a>
+
+    <a href="kosakata.html">
+        📚 Kosakata
+    </a>
+
+    <a href="bunpou.html">
+        文 Bunpou
+    </a>
+
+    <a href="quiz.html">
+        📝 Quiz
+    </a>
+
+    <a href="dokkai.html">
+        📖 Dokkai
+    </a>
+
+    <a href="kaiwa.html">
+        💬 Kaiwa
+    </a>
+
+    <a href="jlpt.html">
+        🎓 Latihan JLPT
+    </a>
+
+</nav>
+
+    <!-- PROFIL -->
+    <button class="profile-button"
+            type="button"
+            aria-label="Profil pengguna"
+            onclick="bukaProfil()">
+        👤
+    </button>
+
+</header>
+
+
+    <!-- PANEL PROFIL -->
+    <div class="profile-overlay"
+         id="profile-overlay"
+         onclick="tutupProfil()">
+
+        <div class="profile-panel"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="profile-title"
+             onclick="event.stopPropagation()">
+
+            <button class="profile-close"
+                    type="button"
+                    aria-label="Tutup profil"
+                    onclick="tutupProfil()">
+                ✕
+            </button>
+
+            <div class="profile-avatar">👤</div>
+
+            <h2 id="profile-title">Pelajar Nihongo</h2>
+
+            <p class="profile-japanese">日本語学習者</p>
+
+            <span class="profile-level">🌸 Level Pemula</span>
+
+            <div class="profile-stats">
+                <div>
+                    <h3>0%</h3>
+                    <p>Progres Belajar</p>
+                </div>
+
+                <div>
+                    <h3>N5</h3>
+                    <p>Level JLPT</p>
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <p>📚 Materi: 9 Menu</p>
+                <p>🔥 Streak: 0 Hari</p>
+            </div>
+
+            <p class="profile-note">
+                Terus semangat belajar bahasa Jepang!
+            </p>
+
+        </div>
+    </div>
+
+
+    <main>
+
+        <!-- BERANDA / HERO -->
+        <section class="welcome">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-decoration">🌸</div>
+
+            
+
+<div class="welcome-content">
+
+    <p class="welcome-japanese">
+        こんにちは！
+    </p>
+
+    <h1>
+        Selamat Datang di<br>
+        Nihongo Study <span>🌸</span>
+    </h1>
+
+    <p>
+        Mari belajar bahasa Jepang dengan cara
+        yang menyenangkan, mudah, dan terarah.
+    </p>
+
+    <button type="button" onclick="mulaiBelajar()">
+        ▶ Mulai Belajar →
+    </button>
+
+</div>
+
+ 
+        </section>
+
+
+        <!-- PROGRES BELAJAR -->
+        <section class="progress">
+
+            <div class="progress-card">
+
+                <div class="stat-item">
+                    <div class="stat-icon">📖</div>
+                    <div>
+                        <h3>Materi Belajar</h3>
+                        <p>9 Menu Lengkap</p>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">📊</div>
+                    <div>
+                        <h3>Progres Belajar</h3>
+                        <p>0%</p>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">🏆</div>
+                    <div>
+                        <h3>Level Kamu</h3>
+                        <p>Pemula</p>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">🔥</div>
+                    <div>
+                        <h3>Streak Hari Ini</h3>
+                        <p>0 Hari</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+       
+<!-- MENU UTAMA -->
+<section class="menu" id="menu-utama">
+
+    <div class="menu-heading">
+        <h2>🌸 Menu Utama 🌸</h2>
+        <p>Pilih materi yang ingin kamu pelajari:</p>
+    </div>
+
+    <div class="menu-grid">
+
+        <!-- 1. HIRAGANA & KATAKANA -->
+        <button class="menu-card" onclick="window.location.href='hiragana-katakana.html'"
+            <span class="menu-icon">あ</span>
+            <div>
+                <h3>Hiragana & Katakana</h3>
+                <p>Belajar Huruf Jepang</p>
+            </div>
+        </button>
+
+        <!-- 2. KANJI -->
+        <button class="menu-card" onclick="window.location.href='kanji.html'">
+    <span class="menu-icon">⛩️</span>
+    <div>
+        <h3>Kanji</h3>
+        <p>Belajar Huruf Kanji</p>
+    </div>
+</button>
+        <!-- 3. FLASHCARD -->
+        <button class="menu-card" onclick="window.location.href='flashcard.html'"
+            <span class="menu-icon">🗂️</span>
+            <div>
+                <h3>Flashcard</h3>
+                <p>Latihan Mengingat Materi</p>
+            </div>
+        </button>
+
+        <!-- 4. KOSAKATA -->
+        <button class="menu-card" onclick="window.location.href='kosakata.html'"
+            <span class="menu-icon">📘</span>
+            <div>
+                <h3>Kosakata</h3>
+                <p>Perbendaharaan Kata</p>
+            </div>
+        </button>
+
+        <!-- 5. BUNPOU -->
+        <button class="menu-card" onclick="window.location.href='bunpou.html'"
+            <span class="menu-icon">🧩</span>
+            <div>
+                <h3>Bunpou</h3>
+                <p>Tata Bahasa Jepang</p>
+            </div>
+        </button>
+
+        <!-- 6. QUIZ -->
+        <button class="menu-card" onclick="window.location.href='quiz.html'"
+            <span class="menu-icon">📝</span>
+            <div>
+                <h3>Quiz</h3>
+                <p>Uji Pemahaman</p>
+            </div>
+        </button>
+
+        <!-- 7. DOKKAI -->
+        <button class="menu-card" onclick="window.location.href='dokkai.html'"
+            <span class="menu-icon">📖</span>
+            <div>
+                <h3>Dokkai</h3>
+                <p>Latihan Membaca</p>
+            </div>
+        </button>
+
+        <!-- 8. KAIWA -->
+        <button class="menu-card" onclick="window.location.href='kaiwa.html'"
+            <span class="menu-icon">💬</span>
+            <div>
+                <h3>Kaiwa</h3>
+                <p>Latihan Percakapan</p>
+            </div>
+        </button>
+
+        <!-- 9. LATIHAN JLPT -->
+        <button class="menu-card" onclick="window.location.href='jlpt.html'"
+            <span class="menu-icon">🎓</span>
+            <div>
+                <h3>Latihan JLPT</h3>
+                <p>Persiapan Ujian N5–N3</p>
+            </div>
+        </button>
+
+    </div>
+</section>
+ 
+
+
+       
+<!-- HALAMAN KANJI -->
+<section class="content-section halaman-kanji" id="halaman-kanji">
+
+    <div class="kanji-header">
+        <p class="kanji-subtitle">🌸 NIHONGO STUDY</p>
+        <h2>漢字 - Daftar Kanji</h2>
+        <p>Pelajari Kanji secara bertahap dan menyenangkan.</p>
+    </div>
+
+    <!-- PILIH LEVEL -->
+    <div class="kanji-level level-container">
+        <h3>Pilih Level JLPT</h3>
+        <div class="kanji-level-buttons level-menu">
+            <button class="active" onclick="tampilkanKanji('N5')">N5</button>
+            <button onclick="tampilkanKanji('N4')">N4</button>
+            <button onclick="tampilkanKanji('N3')">N3</button>
+        </div>
+    </div>
+
+    <!-- PENCARIAN -->
+    <div class="kanji-search">
+        <span>🔍</span>
+        <input
+            type="text"
+            id="cari-kanji"
+            placeholder="Cari Kanji atau artinya..."
+        >
+    </div>
+
+    <!-- JUMLAH KANJI -->
+    <div class="kanji-list-heading">
+        <div>
+            <h3>Daftar Kanji N5</h3>
+            <p>Pilih salah satu Kanji untuk melihat detail.</p>
+        </div>
+        <span class="kanji-total">100 Kanji</span>
+    </div>
+
+    <!-- GRID KANJI -->
+    <div class="kanji-grid" id="materi-kanji">
+
+        <!-- Contoh sementara, nanti diganti dengan data dari PDF -->
+        <button class="kanji-item" onclick="pilihKanji('日')">日</button>
+        <button class="kanji-item" onclick="pilihKanji('月')">月</button>
+        <button class="kanji-item" onclick="pilihKanji('火')">火</button>
+        <button class="kanji-item" onclick="pilihKanji('水')">水</button>
+        <button class="kanji-item" onclick="pilihKanji('木')">木</button>
+        <button class="kanji-item" onclick="pilihKanji('金')">金</button>
+        <button class="kanji-item" onclick="pilihKanji('土')">土</button>
+        <button class="kanji-item" onclick="pilihKanji('人')">人</button>
+        <button class="kanji-item" onclick="pilihKanji('山')">山</button>
+        <button class="kanji-item" onclick="pilihKanji('川')">川</button>
+
+    </div>
+
+    <!-- DETAIL KANJI -->
+    <div class="kanji-detail" id="detail-kanji" hidden>
+
+        <button class="kanji-back" onclick="tutupDetailKanji()">
+            ← Kembali ke daftar
+        </button>
+
+        <div class="kanji-detail-main">
+            <div class="kanji-detail-character" id="detail-karakter">
+                日
+            </div>
+
+            <div>
+                <p class="kanji-detail-label">DETAIL KANJI</p>
+                <h3 id="detail-judul">Informasi Kanji</h3>
+                <p id="detail-level">JLPT N5</p>
+            </div>
+        </div>
+
+        <div class="kanji-info-grid">
+
+            <div class="kanji-info-card">
+                <span>📖</span>
+                <h4>Arti</h4>
+                <p id="detail-arti">-</p>
+            </div>
+
+            <div class="kanji-info-card">
+                <span>音</span>
+                <h4>Onyomi</h4>
+                <p id="detail-onyomi">-</p>
+            </div>
+
+            <div class="kanji-info-card">
+                <span>訓</span>
+                <h4>Kunyomi</h4>
+                <p id="detail-kunyomi">-</p>
+            </div>
+
+            <div class="kanji-info-card">
+                <span>🔤</span>
+                <h4>Romaji</h4>
+                <p id="detail-romaji">-</p>
+            </div>
+
+        </div>
+
+        <div class="kanji-example-section">
+            <h3>📚 Contoh Kosakata</h3>
+            <div id="detail-kosakata"></div>
+        </div>
+
+
+        <div class="kanji-example-section">
+            <h3>✍️ Urutan Penulisan</h3>
+            <div id="detail-animasi">
+                Animasi penulisan Kanji akan ditampilkan di sini.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+      
+<!-- HALAMAN KOSAKATA -->
+<section class="content-section" id="halaman-kosakata">
+
+    <h2>📚 Belajar Kosakata</h2>
+    <p>Pelajari kosakata bahasa Jepang berdasarkan level JLPT.</p>
+
+    <div class="level-container">
+        <h3>Pilih Level JLPT</h3>
+        <div class="level-menu">
+            <button type="button" onclick="pilihLevelKosakata('N5')">N5</button>
+            <button type="button" onclick="pilihLevelKosakata('N4')">N4</button>
+            <button type="button" onclick="pilihLevelKosakata('N3')">N3</button>
+        </div>
+    </div>
+
+    <div id="materi-kosakata"></div>
+
+</section>
+
+
+
+        <!-- HALAMAN BUNPOU -->
+        <section class="content-section" id="halaman-bunpou">
+
+            <h2>文法 - Belajar Bunpou</h2>
+            <p>Pelajari pola tata bahasa Jepang secara bertahap.</p>
+
+            <div class="level-container">
+                <h3>Pilih Level JLPT</h3>
+                <div class="level-menu">
+                    <button type="button" onclick="pilihLevelBunpou('N5')">N5</button>
+                    <button type="button" onclick="pilihLevelBunpou('N4')">N4</button>
+                    <button type="button" onclick="pilihLevelBunpou('N3')">N3</button>
+                </div>
+            </div>
+
+            <div id="materi-bunpou"></div>
+        </section>
+
+
+        <!-- HALAMAN KAIWA -->
+        <section class="content-section" id="halaman-kaiwa">
+
+            <h2>💬 Belajar Kaiwa</h2>
+            <p>Latihan percakapan bahasa Jepang dalam kehidupan sehari-hari.</p>
+
+            <div class="level-container">
+                <h3>Pilih Level JLPT</h3>
+                <div class="level-menu">
+                    <button type="button" onclick="pilihLevelKaiwa('N5')">N5</button>
+                    <button type="button" onclick="pilihLevelKaiwa('N4')">N4</button>
+                    <button type="button" onclick="pilihLevelKaiwa('N3')">N3</button>
+                </div>
+            </div>
+
+            <div id="materi-kaiwa"></div>
+        </section>
+
+
+        <!-- HALAMAN LISTENING -->
+        <section class="content-section" id="halaman-listening">
+
+            <h2>🎧 Listening</h2>
+            <p>Latih kemampuan mendengarkan bahasa Jepang.</p>
+
+            <div class="level-container">
+                <div class="level-menu">
+                    <button type="button">N5</button>
+                    <button type="button">N4</button>
+                    <button type="button">N3</button>
+                </div>
+            </div>
+
+            <div id="materi-listening"></div>
+        </section>
+
+
+        <!-- HALAMAN QUIZ -->
+        <section class="content-section" id="halaman-quiz">
+
+            <h2>📝 Quiz Bahasa Jepang</h2>
+            <p>Uji pemahaman Kanji, kosakata, dan tata bahasa.</p>
+
+            <div class="level-container">
+                <h3>Pilih Level JLPT</h3>
+                <div class="level-menu">
+                    <button type="button" onclick="pilihLevelQuiz('N5')">N5</button>
+                    <button type="button" onclick="pilihLevelQuiz('N4')">N4</button>
+                    <button type="button" onclick="pilihLevelQuiz('N3')">N3</button>
+                </div>
+            </div>
+
+            <div id="materi-quiz"></div>
+        </section>
+
+
+        
+<!-- HALAMAN FLASH CARD -->
+<section class="content-section" id="halaman-flashcard">
+
+    <h2>🗂️ Flash Card Kanji</h2>
+    <p>Ketuk Kanji untuk melihat furigana dan artinya.</p>
+
+    <!-- PILIH LEVEL -->
+    <div class="level-container">
+        <h3>Pilih Level JLPT</h3>
+        <div class="level-menu">
+            <button type="button" onclick="pilihLevelFlashcard('N5')">N5</button>
+            <button type="button" onclick="pilihLevelFlashcard('N4')">N4</button>
+            <button type="button" onclick="pilihLevelFlashcard('N3')">N3</button>
+        </div>
+    </div>
+
+    <!-- FILTER HAFALAN -->
+    <div class="filter-flashcard">
+        <button onclick="filterFlashcard('semua')">Semua</button>
+        <button onclick="filterFlashcard('hafal')">Sudah Hafal</button>
+        <button onclick="filterFlashcard('belum')">Belum Hafal</button>
+    </div>
+
+    <!-- PROGRES -->
+    <div id="progres-flashcard">
+        Progres hafalan: 0 Kanji
+    </div>
+
+    <!-- KARTU KANJI -->
+    <div id="materi-flashcard"></div>
+
+</section>
+
+        <!-- HALAMAN DOKKAI -->
+        <section class="content-section" id="halaman-dokkai">
+
+            <h2>読解 - Latihan Membaca</h2>
+            <p>Berlatih membaca teks dan percakapan bahasa Jepang.</p>
+
+            <div class="level-container">
+                <h3>Pilih Level JLPT</h3>
+                <div class="level-menu">
+                    <button type="button" onclick="pilihLevelDokkai('N5')">N5</button>
+                    <button type="button" onclick="pilihLevelDokkai('N4')">N4</button>
+                    <button type="button" onclick="pilihLevelDokkai('N3')">N3</button>
+                </div>
+            </div>
+
+            <div id="materi-dokkai"></div>
+        </section>
+
+
+        <!-- HALAMAN JLPT -->
+        <section class="content-section" id="halaman-jlpt">
+
+            <h2>🎓 Latihan JLPT</h2>
+            <p>
+                Persiapkan kemampuan bahasa Jepang
+                melalui latihan soal JLPT.
+            </p>
+
+            <div class="level-container">
+                <h3>Pilih Level Ujian</h3>
+                <div class="level-menu">
+                    <button type="button" onclick="tampilkanJLPT('N5')">N5</button>
+                    <button type="button" onclick="tampilkanJLPT('N4')">N4</button>
+                    <button type="button" onclick="tampilkanJLPT('N3')">N3</button>
+                </div>
+            </div>
+
+            <h3>Jenis Latihan</h3>
+
+            <div class="jlpt-types">
+
+                <div class="kanji-card">
+                    <h3>文字・語彙</h3>
+                    <p>Moji Goi - Huruf dan Kosakata</p>
+                </div>
+
+                <div class="kanji-card">
+                    <h3>文法</h3>
+                    <p>Bunpou - Tata Bahasa</p>
+                </div>
+
+                <div class="kanji-card">
+                    <h3>読解</h3>
+                    <p>Dokkai - Membaca</p>
+                </div>
+
+                <div class="kanji-card">
+                    <h3>聴解</h3>
+                    <p>Choukai - Mendengarkan</p>
+                </div>
+
+                <div class="kanji-card">
+                    <h3>模擬試験</h3>
+                    <p>Mogi Shiken - Simulasi Ujian</p>
+                </div>
+
+            </div>
+
+            <div id="materi-jlpt"></div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+            <h3>🌸 Nihongo Study</h3>
+            <p>日本語の勉強を楽しもう！</p>
+            <p>Belajar Jepang, Raih Masa Depan.</p>
+        </div>
+
+        <p class="copyright">
+            © 2026 Nihongo Study. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

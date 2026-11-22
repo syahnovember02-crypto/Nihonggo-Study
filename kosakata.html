@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Nihongo Study - Belajar bahasa Jepang dengan mudah, menyenangkan, dan terarah.">
+
+    <title>Nihongo Study - Belajar Bahasa Jepang</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<!-- HEADER -->
+<header class="header" id="beranda">
+
+    <!-- TOMBOL HAMBURGER -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-controls="navigasi-utama"
+        aria-expanded="false"
+        onclick="toggleNavigasiUtama()">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <!-- LOGO -->
+    <div class="logo">
+        <div class="logo-icon">⛩️</div>
+        <div class="logo-text">
+            <h1>Nihongo Study</h1>
+            <p>日本語を学ぼう</p>
+        </div>
+    </div>
+
+    <!-- NAVIGASI -->
+<nav id="navigasi-utama"
+     aria-label="Menu navigasi"
+     onclick="tutupNavigasiUtama()">
+
+    <a href="index.html">
+        ⌂ Beranda
+    </a>
+
+    <a href="hiragana-katakana.html">
+        あ Hiragana & Katakana
+    </a>
+
+    <a href="kanji.html">
+        漢 Kanji
+    </a>
+
+    <a href="flashcard.html">
+        🗂️ Flashcard
+    </a>
+
+    <a href="kosakata.html">
+        📚 Kosakata
+    </a>
+
+    <a href="bunpou.html">
+        文 Bunpou
+    </a>
+
+    <a href="quiz.html">
+        📝 Quiz
+    </a>
+
+    <a href="dokkai.html">
+        📖 Dokkai
+    </a>
+
+    <a href="kaiwa.html">
+        💬 Kaiwa
+    </a>
+
+    <a href="jlpt.html">
+        🎓 Latihan JLPT
+    </a>
+
+</nav>
+    <!-- PROFIL -->
+    <button class="profile-button"
+            type="button"
+            aria-label="Profil pengguna"
+            onclick="bukaProfil()">
+        👤
+    </button>
+
+</header>
+
+
+    <!-- PANEL PROFIL -->
+    <div class="profile-overlay"
+         id="profile-overlay"
+         onclick="tutupProfil()">
+
+        <div class="profile-panel"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="profile-title"
+             onclick="event.stopPropagation()">
+
+            <button class="profile-close"
+                    type="button"
+                    aria-label="Tutup profil"
+                    onclick="tutupProfil()">
+                ✕
+            </button>
+
+            <div class="profile-avatar">👤</div>
+
+            <h2 id="profile-title">Pelajar Nihongo</h2>
+
+            <p class="profile-japanese">日本語学習者</p>
+
+            <span class="profile-level">🌸 Level Pemula</span>
+
+            <div class="profile-stats">
+                <div>
+                    <h3>0%</h3>
+                    <p>Progres Belajar</p>
+                </div>
+
+                <div>
+                    <h3>N5</h3>
+                    <p>Level JLPT</p>
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <p>📚 Materi: 9 Menu</p>
+                <p>🔥 Streak: 0 Hari</p>
+            </div>
+
+            <p class="profile-note">
+                Terus semangat belajar bahasa Jepang!
+            </p>
+
+        </div>
+    </div>
+
+
+   
+<main>
+
+    <!-- TOMBOL KEMBALI KE BERANDA -->
+    <a href="index.html" class="tombol-kembali-beranda">
+        ← Kembali ke Beranda
+    </a>
+
+    <!-- HALAMAN KOSAKATA -->
+    <section class="content-section aktif" id="halaman-kosakata">
+
+        <!-- HEADER KOSAKATA -->
+        <div class="kanji-header">
+            <p class="kanji-subtitle">🌸 NIHONGO STUDY</p>
+
+            <h2>📚 Belajar Kosakata</h2>
+
+            <p>
+                Pelajari kosakata bahasa Jepang berdasarkan level JLPT.
+            </p>
+        </div>
+
+        <!-- PILIH LEVEL JLPT -->
+        <div class="level-container">
+            <h3>Pilih Level JLPT</h3>
+
+            <div class="level-menu">
+                <button type="button"
+                    onclick="pilihLevelKosakata('N5')">
+                    N5
+                </button>
+
+                <button type="button"
+                    onclick="pilihLevelKosakata('N4')">
+                    N4
+                </button>
+
+                <button type="button"
+                    onclick="pilihLevelKosakata('N3')">
+                    N3
+                </button>
+            </div>
+        </div>
+
+        <!-- TEMPAT MATERI KOSAKATA -->
+        <div id="materi-kosakata" hidden></div>
+
+    </section>
+
+</main>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+            <h3>🌸 Nihongo Study</h3>
+            <p>日本語の勉強を楽しもう！</p>
+            <p>Belajar Jepang, Raih Masa Depan.</p>
+        </div>
+
+        <p class="copyright">
+            © 2026 Nihongo Study. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
